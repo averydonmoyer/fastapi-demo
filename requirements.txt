@@ -4,3 +4,5 @@ pydantic
 requests
 uvicorn
 boto3
+dnspython
+mysqlclient 
