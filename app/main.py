@@ -5,17 +5,14 @@ from typing import Optional
 from pydantic import BaseModel
 import json 
 import requests 
-
-# import boto3
-
-app = FastAPI()
-
 import os
 import MySQLdb
 from fastapi.staticfiles import StaticFiles
 
+# import boto3
 
-app.mount("/static", StaticFiles(directory="static", html=True), name="static")
+app = FastAPI()
+# app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 
 DBHOST = os.environ.get('DBHOST')
 DBUSER = os.environ.get('DBUSER')
@@ -31,7 +28,7 @@ DB = "hdj3fw"  # replace with your UVA computing ID / database name
 # This will return a simple hello world via GET method.
 @app.get("/")  # zone apex
 def read_root():
-    return {"Hello": "Hey everybody it's Tuesday!"}
+    return {"Hello": "Hey everybody it's the weekend!"}
 
 @app.get("/github/repos/{user}")
 def github_user_repos(user): 
