@@ -28,7 +28,7 @@ DB = "hdj3fw"  # replace with your UVA computing ID / database name
 # This will return a simple hello world via GET method.
 @app.get("/")  # zone apex
 def read_root():
-    return {"Hello": "Hey everybody it's the weekend!"}
+    return {"Help": "Data science is hard sometimes!"}
 
 @app.get("/github/repos/{user}")
 def github_user_repos(user): 
