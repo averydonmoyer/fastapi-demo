@@ -12,7 +12,7 @@ from fastapi.staticfiles import StaticFiles
 # import boto3
 
 app = FastAPI()
-# app.mount("/static", StaticFiles(directory="static", html=True), name="static")
+app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 
 DBHOST = os.environ.get('DBHOST')
 DBUSER = os.environ.get('DBUSER')
