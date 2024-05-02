@@ -32,6 +32,16 @@ def get_all_albums():
 # The URL for this API has a /docs endpoint that lets you see and test
 # your various endpoints/methods.
 
+# added the code to get a single album by its ID 
+@app.get("/albums/{id}")
+def get_one_album(id):
+    db = MySQLdb.connect(host=DBHOST, user=DBUSER, passwd=DBPASS, db=DB)
+    c = db.cursor(MySQLdb.cursors.DictCursor)
+    c.execute("SELECT * FROM albums WHERE id=" + id)
+    results = c.fetchall()
+    db.close()
+    return results
+
 
 # The zone apex is the 'default' page for a URL
 # This will return a simple hello world via GET method.
